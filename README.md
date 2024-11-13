@@ -138,3 +138,101 @@ void main() {
     Pindahkan MyHomePage ke menu.dart. Pada class ItemCard, tambahkan button "Lihat Daftar Produk", "Tambah Produk", dan "Logout".
     3. Jadikan color menjadi salah satu parameter di ItemCard untuk memberikan warna yang berbeda untuk setiap tombol.
     4. Tambahkan action onTap pada InkWell di dalam ItemCard untuk memunculkan SnackBar dengan pesan yang sesuai ketika tombol ditekan.
+  
+# Tugas 8 - Trias Fahri Naufal
+
+
+1. Kegunaan const di Flutter
+
+const di Flutter digunakan untuk mendeklarasikan konstanta yang nilainya tetap dan diketahui pada waktu compile.
+
+Keuntungan Menggunakan const
+
+  1. Optimisasi Performa: Widget yang dideklarasikan sebagai const hanya dibuat sekali dan dapat digunakan kembali tanpa perlu dibuat ulang, sehingga mengurangi beban pada garbage collector.
+  2. Immutability: Nilai yang dideklarasikan sebagai const tidak dapat diubah, sehingga membantu mencegah perubahan yang tidak disengaja.
+  3. Peningkatan Kecepatan Kompilasi: Karena nilai const diketahui pada waktu kompilasi, Dart dapat melakukan optimisasi yang lebih baik, sehingga meningkatkan kecepatan kompilasi.
+
+Kapan Sebaiknya Menggunakan const
+
+  1. Gunakan const ketika nilai tidak akan berubah selama runtime dan dapat diketahui pada waktu kompilasi.
+  2. Gunakan const untuk widget yang tidak memerlukan perubahan state atau properti dinamis.
+
+  Kapan Sebaiknya Tidak Menggunakan const
+
+  Jangan gunakan const untuk nilai yang akan berubah selama runtime atau yang bergantung pada input pengguna atau data dinamis.
+
+2. Perbandingan Penggunaan Column dan Row pada Flutter
+Column dan Row adalah widget placement dasar di Flutter yang digunakan untuk menyusun widget anak secara vertikal dan horizontal.
+
+a. Column
+
+Fungsi: Menyusun widget anak secara vertikal.
+Properti Utama: mainAxisAlignment, crossAxisAlignment, children.
+contoh:
+```dart
+Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text('Item 1'),
+    Text('Item 2'),
+    Text('Item 3'),
+  ],
+)
+```
+
+b. Row
+
+Fungsi: Menyusun widget anak secara horizontal.
+Properti Utama: mainAxisAlignment, crossAxisAlignment, children.
+contoh:
+```dart
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  crossAxisAlignment: CrossAxisAlignment.center,
+  children: [
+    Icon(Icons.star),
+    Icon(Icons.star),
+    Icon(Icons.star),
+  ],
+)
+```
+
+3. Elemen Input yang Digunakan pada Halaman Form
+
+Elemen input yang digunakan adalah TextFormField-> Untuk input teks seperti nama produk, deskripsi, dan harga.
+
+Elemen Input Flutter Lain yang Tidak Digunakan:
+
+Checkbox: Untuk input boolean.
+Radio: Untuk memilih satu dari beberapa opsi.
+Switch: Untuk input boolean dengan tampilan switch.
+Slider: Untuk input nilai numerik dalam rentang tertentu.
+DropdownButton: Untuk memilih satu dari beberapa opsi dalam bentuk dropdown.
+
+4. Mengatur Tema dalam Aplikasi Flutter
+Untuk mengatur tema dalam aplikasi Flutter agar konsisten, gunakan ThemeData dan tentukan properti seperti warna, text style, dan elemen desain lainnya.
+contoh penggunaan pada aplikasi ini
+```dart
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.deepPurple,
+        ).copyWith(secondary: Colors.deepPurple[400]),
+        useMaterial3: true,
+      ),
+      home: MyHomePage(),
+```
+
+5. Menangani Navigasi dalam Aplikasi dengan Banyak Halaman
+Untuk menangani navigasi dalam aplikasi dengan banyak halaman, gunakan Navigator dan Route di Flutter.
+contoh
+```dart
+// Navigasi ke halaman baru
+Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => SecondPage()),
+);
+
+// Kembali ke halaman sebelumnya
+Navigator.pop(context);
+```

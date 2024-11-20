@@ -138,7 +138,6 @@ void main() {
     Pindahkan MyHomePage ke menu.dart. Pada class ItemCard, tambahkan button "Lihat Daftar Produk", "Tambah Produk", dan "Logout".
     3. Jadikan color menjadi salah satu parameter di ItemCard untuk memberikan warna yang berbeda untuk setiap tombol.
     4. Tambahkan action onTap pada InkWell di dalam ItemCard untuk memunculkan SnackBar dengan pesan yang sesuai ketika tombol ditekan.
-  
 # Tugas 8 - Trias Fahri Naufal
 
 
@@ -236,3 +235,16 @@ Navigator.push(
 // Kembali ke halaman sebelumnya
 Navigator.pop(context);
 ```
+# Tugas 9 - Trias Fahri Naufal
+  1. Mengapa Kita Perlu Membuat Model untuk Pengambilan atau Pengiriman Data JSON?
+  Membuat model untuk pengambilan atau pengiriman data JSON sangat penting karena:
+
+  Struktur Data yang Konsisten: Model memastikan bahwa data yang diterima atau dikirim memiliki struktur yang konsisten. Ini membantu dalam menghindari kesalahan yang mungkin terjadi karena data yang tidak terstruktur dengan baik.
+
+  Validasi Data: Model dapat digunakan untuk memvalidasi data yang diterima atau dikirim. Ini memastikan bahwa data yang diproses adalah valid dan sesuai dengan yang diharapkan.
+
+  Kemudahan Penggunaan: Dengan model, kita dapat dengan mudah mengakses dan memanipulasi data. Model menyediakan metode dan properti yang memudahkan pengolahan data.
+
+  Pemeliharaan Kode: Model membuat kode lebih mudah dipelihara dan dibaca. Dengan model, kita dapat dengan mudah memahami struktur data dan bagaimana data tersebut digunakan dalam aplikasi.
+
+  Jika kita tidak membuat model terlebih dahulu, kita mungkin tidak akan mendapatkan error langsung, tetapi akan lebih sulit untuk mengelola dan memproses data. Tanpa model, kita harus mengakses data secara langsung dari JSON, yang bisa menyebabkan kesalahan jika struktur data berubah atau jika data tidak valid.

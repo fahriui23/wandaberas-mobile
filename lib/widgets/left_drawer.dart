@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wandaberas/screens/menu.dart';
 import 'package:wandaberas/screens/productentry_form.dart';
+import 'package:wandaberas/screens/list_productentry.dart'; // Add this line to import the correct file
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -59,6 +60,16 @@ class LeftDrawer extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => ProductEntryFormPage(),
                 ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('Daftar Product'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProductPage()),
               );
             },
           ),

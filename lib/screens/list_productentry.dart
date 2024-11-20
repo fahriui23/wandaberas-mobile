@@ -14,7 +14,6 @@ class ProductPage extends StatefulWidget {
 class _ProductPageState extends State<ProductPage> {
   Future<List<Product>> fetchProduct(CookieRequest request) async {
     final response = await request.get('http://localhost:8000/json/');
-
     // Melakukan decode response menjadi bentuk json
     var data = response;
 
@@ -25,12 +24,14 @@ class _ProductPageState extends State<ProductPage> {
         listProduct.add(Product.fromJson(d));
       }
     }
+    print(listProduct);
     return listProduct;
   }
 
   @override
   Widget build(BuildContext context) {
     final request = context.watch<CookieRequest>();
+    print(request.cookies);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Product List'),
@@ -64,18 +65,18 @@ class _ProductPageState extends State<ProductPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "${snapshot.data![index].fields.mood}",
+                        "${snapshot.data![index].fields.product}",
                         style: const TextStyle(
                           fontSize: 18.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Text("${snapshot.data![index].fields.feelings}"),
+                      Text("${snapshot.data![index].fields.name}"),
                       const SizedBox(height: 10),
-                      Text("${snapshot.data![index].fields.moodIntensity}"),
+                      Text("${snapshot.data![index].fields.price}"),
                       const SizedBox(height: 10),
-                      Text("${snapshot.data![index].fields.time}")
+                      Text("${snapshot.data![index].fields.description}"),
                     ],
                   ),
                 ),

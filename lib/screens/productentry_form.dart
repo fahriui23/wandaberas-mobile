@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:wandaberas/screens/menu.dart';
-import 'package:wandaberas/screens/list_productentry.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 import 'dart:convert';

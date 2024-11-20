@@ -248,3 +248,109 @@ Navigator.pop(context);
   Pemeliharaan Kode: Model membuat kode lebih mudah dipelihara dan dibaca. Dengan model, kita dapat dengan mudah memahami struktur data dan bagaimana data tersebut digunakan dalam aplikasi.
 
   Jika kita tidak membuat model terlebih dahulu, kita mungkin tidak akan mendapatkan error langsung, tetapi akan lebih sulit untuk mengelola dan memproses data. Tanpa model, kita harus mengakses data secara langsung dari JSON, yang bisa menyebabkan kesalahan jika struktur data berubah atau jika data tidak valid.
+
+  2. Fungsi dari Library http
+  Library http dalam Flutter digunakan untuk melakukan permintaan HTTP ke server. Berikut adalah beberapa fungsi utama dari library http yang telah diimplementasikan dalam tugas ini:
+
+  Mengirim Permintaan HTTP:
+
+  GET Request: Digunakan untuk mengambil data dari server. Misalnya, mengambil daftar produk dari server.
+  POST Request: Digunakan untuk mengirim data ke server. Misalnya, mengirim data registrasi pengguna atau login.
+  Mengelola Respons HTTP:
+
+  Membaca Data dari Respons: Data yang diterima dari server dapat dibaca dan diolah lebih lanjut.
+  Mendukung Pemrograman Asinkronus:
+
+  Library http mendukung pemrograman asinkron dengan menggunakan Future dan async/await. Ini memungkinkan aplikasi untuk mengirim permintaan HTTP tanpa memblokir thread utama, sehingga UI tetap responsif.
+  Mengatur Header dan Body:
+
+  Library http memungkinkan pengaturan header dan body pada permintaan HTTP. Ini penting untuk autentikasi, pengiriman data dalam format tertentu (seperti JSON), dan pengaturan lainnya.
+
+  3. Fungsi dari CookieRequest
+  CookieRequest adalah kelas yang digunakan untuk mengelola permintaan HTTP yang memerlukan autentikasi berbasis cookie. Fungsi utama dari CookieRequest adalah:
+
+  Mengelola Cookie:
+
+  CookieRequest menyimpan dan mengelola cookie yang diterima dari server. Cookie ini digunakan untuk autentikasi pada permintaan selanjutnya.
+  Cookie disimpan dalam memori dan ditambahkan secara otomatis ke setiap permintaan HTTP yang memerlukannya.
+  Mengirim Permintaan HTTP:
+
+  CookieRequest dapat digunakan untuk mengirim permintaan HTTP seperti GET, POST, dll., dengan menyertakan cookie untuk autentikasi.
+  Ini memastikan bahwa setiap permintaan yang memerlukan autentikasi dapat dilakukan tanpa perlu menambahkan cookie secara manual.
+  Menyimpan Status Login:
+
+  CookieRequest menyimpan status login pengguna, yang dapat digunakan untuk menentukan apakah pengguna sudah login atau belum.
+  Ini memungkinkan aplikasi untuk menampilkan atau menyembunyikan konten berdasarkan status login pengguna.
+  Mengapa Instance CookieRequest Perlu Dibagikan ke Semua Komponen di Aplikasi Flutter
+  Konsistensi Autentikasi:
+
+  Dengan membagikan instance CookieRequest, semua komponen dapat menggunakan cookie yang sama untuk autentikasi, memastikan konsistensi dalam status login pengguna.
+  Ini penting untuk menjaga sesi pengguna tetap aktif dan memastikan bahwa semua permintaan yang memerlukan autentikasi dapat dilakukan dengan benar.
+  Kemudahan Akses:
+
+  Membagikan instance CookieRequest memudahkan komponen untuk mengakses dan mengirim permintaan HTTP yang memerlukan autentikasi.
+  Komponen tidak perlu membuat instance CookieRequest baru setiap kali mereka perlu mengirim permintaan HTTP, yang mengurangi duplikasi kode dan potensi kesalahan.
+  Pengelolaan Sesi yang Efisien:
+
+  Dengan satu instance CookieRequest, pengelolaan sesi menjadi lebih efisien karena cookie dan status login disimpan di satu tempat.
+  Ini juga memudahkan untuk mengelola logout pengguna, karena cukup menghapus cookie dari satu instance CookieRequest.
+  4. 
+  Input Data: Pengguna memasukkan data melalui elemen input di Flutter.
+  Mengirim Data ke Server: Data dikirim ke server menggunakan permintaan HTTP.
+  Memproses Data di Server: Server memproses data dan menyimpannya ke database.
+  Menerima Respons di Flutter: Aplikasi Flutter menerima respons dari server.
+  Mengambil Data dari Server: Data yang telah disimpan di server diambil kembali untuk ditampilkan.
+  Menampilkan Data di Flutter: Data ditampilkan di UI Flutter menggunakan widget yang sesuai.
+  5. 
+  Register:
+
+  Pengguna memasukkan data akun di Flutter.
+  Data dikirim ke server Django.
+  Django memproses data dan membuat akun baru.
+  Flutter menerima respons dan menampilkan pesan sukses atau gagal.
+
+  Login:
+
+  Pengguna memasukkan username dan password di Flutter.
+  Data dikirim ke server Django.
+  Django memverifikasi kredensial dan membuat sesi.
+  Flutter menyimpan cookie sesi dan menampilkan menu utama.
+
+  Logout:
+
+  Flutter mengirim permintaan logout ke server Django.
+  Django menghapus sesi.
+  Flutter menghapus cookie sesi dan mengarahkan pengguna ke halaman login.
+
+  ## Implementasi Checklist
+  1. Mengimplementasikan Fitur Registrasi Akun pada Proyek Tugas Flutter
+    1. Membuat Halaman Registrasi di Flutter:
+
+    Buat halaman baru RegisterPage di Flutter.
+    Tambahkan elemen input untuk username, password, dan konfirmasi password menggunakan TextFormField.
+    Tambahkan tombol ElevatedButton untuk mengirim data registrasi.
+
+  2. Membuat Endpoint Registrasi di Django:
+  Buat view untuk menangani registrasi pengguna di Django.
+    1. Membuat Halaman Login pada Proyek Tugas Flutter
+      Membuat Halaman Login di Flutter:
+
+    Buat halaman baru LoginPage di Flutter.
+    Tambahkan elemen input untuk username dan password menggunakan TextFormField.
+    Tambahkan tombol ElevatedButton untuk mengirim data login.
+    2. Membuat Endpoint Login di Django:
+    Buat view untuk menangani login pengguna di Django.
+  3. Mengintegrasikan Sistem Autentikasi Django dengan Proyek Tugas Flutter
+    1. Menggunakan CookieRequest di Flutter:
+    Pastikan CookieRequest digunakan untuk mengelola permintaan HTTP yang memerlukan autentikasi.
+    2. Mengelola Status Login di Flutter:
+    Gunakan CookieRequest untuk menyimpan status login pengguna dan mengelola sesi.
+  4. Membuat Model Kustom Sesuai dengan Proyek Aplikasi Django
+    1. Membuat Model di Django:
+    Buat model kustom sesuai dengan kebutuhan aplikasi di Django.
+    2. Membuat Serializer untuk Model di Django:
+    Buat serializer untuk mengonversi model ke format JSON.
+    3. Membuat View untuk Mengelola Data di Django:
+    Buat view untuk mengelola data model, seperti mengambil, menambah, mengubah, dan menghapus data.
+    4. Mengambil dan Menampilkan Data di Flutter:
+    Gunakan http atau CookieRequest untuk mengambil data dari server dan menampilkannya di Flutter.
